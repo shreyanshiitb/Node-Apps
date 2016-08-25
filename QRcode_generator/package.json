@@ -1,0 +1,15 @@
+{
+  "name": "qrgen",
+  "version": "1.0.0",
+  "description": "this app will generate QRCodes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "unknown",
+  "license": "ISC",
+  "dependencies": {
+    "qr-image": "^2.0.0"
+  },
+  "devDependencies": {}
+}
