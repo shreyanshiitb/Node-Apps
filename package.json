@@ -1,0 +1,31 @@
+{
+  "name": "app3",
+  "version": "0.0.1",
+  "description": " ",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cheerio": "^0.20.0",
+    "connect-mongo": "^0.4.1",
+    "cookie-parser": "^1.1.0",
+    "ejs": "^2.4.2",
+    "express": "^4.2.0",
+    "express-session": "^1.2.0",
+    "hogan-express": "^0.5.2",
+    "json-2-csv": "^2.0.22",
+    "mongoose": "^3.8.10",
+    "morgan": "^1.7.0",
+    "passport": "^0.2.0",
+    "passport-facebook": "^1.0.3",
+    "request": "^2.72.0",
+    "socket.io": "^0.9.17",
+    "x-ray": "^2.3.0",
+    "x-ray-phantom": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
