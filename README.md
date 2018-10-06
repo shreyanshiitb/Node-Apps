@@ -1,2 +1,2 @@
 # Node-Apps
-Demo projects using NodeJS
+Projects using NodeJS
