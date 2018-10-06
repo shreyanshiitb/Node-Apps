@@ -1,0 +1,21 @@
+{
+  "name": "express_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "hbs": "^4.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.10",
+    "q": "^1.5.1",
+    "request": "^2.87.0",
+    "yargs": "^4.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
