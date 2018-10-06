@@ -1,2 +1,2 @@
 # Node-Apps
-Projects using NodeJS
+Mini Projects using NodeJS
