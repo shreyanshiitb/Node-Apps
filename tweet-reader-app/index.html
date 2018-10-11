@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tweet reader</title>
+  <style>
+    h1 {
+      color: white;
+      font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+      font-weight: bold;
+      line-height: 16px;
+    }
+
+    .linkToGit {
+      display: block;
+      color: white;
+      font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+
+    }
+
+    blockquote {
+      display: block;
+      background-color: white;
+    }
+
+    blockquote.twitter-tweet {
+      font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 16px;
+      border-color: #eee #ddd #bbb;
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 1px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+      margin: 10px 5px;
+      padding: 0 16px 16px 16px;
+      max-width: 468px;
+    }
+
+    blockquote.twitter-tweet p {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 20px;
+    }
+
+    blockquote.twitter-tweet a {
+      color: inherit;
+      font-weight: normal;
+      text-decoration: none;
+      outline: 0 none;
+    }
+
+    blockquote.twitter-tweet a:hover,
+    blockquote.twitter-tweet a:focus {
+      text-decoration: underline;
+    }
+
+    body {
+      background-color: black;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="https://luispa.im/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="https://luispa.im/favicon-16x16.png" sizes="16x16" />
+</head>
+
+<body>
+  <h1>Escuchando Tweets que digan #luispa</h1>
+  <p class="linkToGit">https://github.com/LuisPaGarcia/tweet-reader</p>
+  <button onclick="document.getElementById('tweets').innerHTML = '';">Borrar</button>
+  <div id="tweets">
+
+  </div>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    (function () {
+      var socket = io({
+        'reconnection': true,
+        'reconnectionDelay': 1000,
+        'reconnectionDelayMax': 5000,
+        'reconnectionAttempts': 5
+      });
+
+      socket.on('chat message', function (res) {
+        console.log("nuevo tweet!", res)
+
+        var user = res.user;
+        var usuario = user.screen_name;
+        var Nombre = user.name;
+        var imagen = user.profile_image_url_https;
+        var contenido = res.text;
+        // console.log("Usuario: @", usuario);
+        // console.log("Nombre: ", Nombre);
+        // console.log("Imagen: ", imagen);
+        // console.log("Contenido: ", contenido);
+        // console.log(" - - - - - - -  ");
+
+        var objetivo = document.getElementById('tweets');
+
+        var block = document.createElement('BLOCKQUOTE');
+        block.setAttribute('class', 'twitter-tweet');
+        block.setAttribute('data-partner', 'tweetdeck');
+
+        var parag = document.createElement('P');
+        parag.setAttribute('lang', 'es');
+        parag.setAttribute('dir', 'ltr');
+
+        var link = document.createElement('A');
+        block.setAttribute('href', imagen);
+
+        parag.innerText = contenido;
+        block.appendChild(parag);
+        block.appendChild(link);
+        var t = document.createTextNode(Nombre + " - (@" + usuario + ")");
+        block.appendChild(t);
+        objetivo.insertBefore(block, objetivo.firstChild);
+
+
+
+      })
+    })();
+  </script>
+</body>
+
+</html>
