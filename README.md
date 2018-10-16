@@ -1,4 +1,5 @@
 # Node-Apps
+
 Mini Projects using NodeJS
 
 ## Steps to use it
@@ -15,3 +16,4 @@ or
 $ yarn  
 ```
 
+Note: Don't upload the "node-modules" folder!!
