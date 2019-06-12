@@ -1,0 +1,10 @@
+{
+    "steel":{
+        "minimum":"500",
+        "maximum":"100"
+    },
+    "cement":{
+        "minimum":"10",
+        "maximum":"100"
+    }
+}
