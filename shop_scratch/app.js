@@ -8,6 +8,6 @@ app.get('/',function(req,res){
 	res.render('index')
 })
 
-app.listen(8586,function(){
+app.listen(process.env.PORT || 8586,function(){
 	console.log('Node app started at port 8586')
 })
