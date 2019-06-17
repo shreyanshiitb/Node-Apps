@@ -9,12 +9,7 @@
       canvasHeight = canvas.height,
       ctx          = canvas.getContext('2d'),
       image        = new Image(),
-      brush        = new Image(),
-      maximum      = 500,
-      minimum      = 100,
-      prizeMoney   = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-
-  document.getElementById("prize").innerHTML = 'Rs.'+ prizeMoney;
+      brush        = new Image();
 
 
   // base64 Workaround because Same-Origin-Policy
