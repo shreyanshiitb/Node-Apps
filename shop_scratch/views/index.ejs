@@ -13,7 +13,7 @@
   <canvas class="canvas" id="js-canvas" width="300" height="300"></canvas>
   <form class="form" style="visibility: hidden;">
     <center>
-    <h1>Congratulations!</h1>
+    <h2>Congratulations!</h2>
     <div>
       <h3>You have won <br><code id="prize",color="red"><%= prize %></code><br> applicable on your next purchase.</h3>
     </div>
@@ -23,6 +23,18 @@
   </center>
   </form>  
 </div>
+
+<div class="token">
+  <form method="post" action="/saveToken">
+  	<label for="custName">Name</label>
+  	<input type="text" name="custName" id="custName"></br>
+  	<label for="token">Token</label>
+  	<input type="text" name="token" id="token" value="<%=tokenNo%>">
+   	<input type="hidden" name="prize" id="prize" value="<%=prize%>">
+    <input type="submit" value="Submit" />
+  </form>  
+</div>
+
   <script src='/js/main.js'></script>
   
 </body>
