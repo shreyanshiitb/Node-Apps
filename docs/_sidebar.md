@@ -1,6 +1,0 @@
-![](logo.jpg)
-* [Home](/)
-* [Quick Start](quick_start.md)
-* [Features](features.md)
-* [Models](models.md)
-* [Development](development.md)
